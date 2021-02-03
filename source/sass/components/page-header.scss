@@ -1,0 +1,8 @@
+.page-header {
+  padding: 10px 0 0;
+
+  @media (min-width: $desktop-width) {
+    padding: 30px 4.43% 35px 3.9%;
+  }
+}
+

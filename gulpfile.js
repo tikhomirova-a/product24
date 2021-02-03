@@ -20,22 +20,20 @@ gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
-    .pipe(sass({
-      includePaths: ['node_modules']
-    }))
+    .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    // .pipe(gulp.dest("build/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("source/css"))
     .pipe(server.stream());
 });
 
 gulp.task("server", function () {
   server.init({
-    server: "build/",
+    server: "source/",
     notify: false,
     open: true,
     cors: true,
@@ -43,8 +41,8 @@ gulp.task("server", function () {
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
-  gulp.watch("source/img/*-icon.svg", gulp.series("sprite", "html", "refresh"));
-  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  // gulp.watch("source/img/*-icon.svg", gulp.series("sprite", "html", "refresh"));
+  // gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
 
 gulp.task("refresh", function (done) {
@@ -89,7 +87,8 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/js/**",
-    "source/*.ico"
+    "source/*.ico",
+    "source/bxslider-4-4.2.12"
     ], {
       base: "source"
     })
@@ -101,4 +100,5 @@ gulp.task("clean", function () {
 });
 
 gulp.task("build", gulp.series("clean", "copy", "css", "images", "webp", "sprite", "html"));
-gulp.task("start", gulp.series("build", "server"));
+// gulp.task("start", gulp.series("build", "server"));
+gulp.task("start", gulp.series("css", "server"));

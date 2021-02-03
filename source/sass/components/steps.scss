@@ -1,0 +1,65 @@
+.steps {
+  background-image: url("../images/berries-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center 7%;
+  //background-size: contain;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../images/berries-mobile@2x.jpg");
+  }
+
+  @media (min-width: $desktop-width) {
+    background: linear-gradient(111.04deg, #e2e2e2 0.39%, rgba(255, 255, 255, 0) 86.46%);
+  }
+}
+
+//.steps__img-wrapper {
+//  width: 100%;
+//
+//  @media (min-width: $desktop-width) {
+//    margin: 0 auto;
+//    max-width: 50%;
+//  }
+//}
+//
+//.steps__img-wrapper img {
+//  width: 100%;
+//  height: auto;
+//  display: block;
+//}
+
+.steps h1 {
+  @include reset-text;
+
+  margin-bottom: 45px;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+.steps__list {
+  @include reset-list;
+
+  line-height: 19px;
+  text-align: center;
+}
+
+.steps__item svg {
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.steps__item span {
+  padding: 0 60px;
+  display: inline-block;
+
+  text-align: center;
+}

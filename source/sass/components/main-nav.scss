@@ -1,0 +1,95 @@
+.main-nav__logo {
+  display: block;
+
+  @media (min-width: $desktop-width) {
+    display: inline-block;
+    margin-right: 3.4%;
+
+    vertical-align: middle;
+  }
+}
+
+.main-nav__logo img {
+  display: block;
+  margin: 0 auto;
+
+  @media (min-width: $desktop-width) {
+    width: 318px;
+    margin: 0;
+    margin-right: auto;
+  }
+}
+
+.main-nav__list {
+  @include reset-list;
+
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: inline-block;
+    max-width: 40%;
+    vertical-align: middle;
+  }
+}
+
+.main-nav__list li {
+  display: inline-block;
+}
+
+.main-nav__list a {
+  @media (min-width: $desktop-width) {
+    padding: 6px 24px;
+
+    color: $basic-gray;
+    text-align: center;
+  }
+
+  &:hover,
+  &:focus {
+    @media (min-width: $desktop-width) {
+      color: $basic-white;
+
+      background-color: $accent;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 195, 104, 0.4);
+    }
+  }
+
+  &:active {
+    @media (min-width: $desktop-width) {
+      opacity: 0.5;
+    }
+  }
+}
+
+.main-nav__button {
+  @include reset-button;
+
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: inline-block;
+    float: right;
+    margin-top: 25px; //TODO
+    padding: 4px 35px;
+
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $basic-white;
+
+    background-color: $accent;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 195, 104, 0.4);
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

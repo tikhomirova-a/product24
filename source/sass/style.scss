@@ -1,2 +1,13 @@
-//global
+// global
 @import "global/fonts.scss";
+@import "global/global.scss";
+@import "global/variables.scss";
+@import "global/mixin.scss";
+
+// components
+@import "components/page.scss";
+@import "components/page-body.scss";
+@import "components/page-header.scss";
+@import "components/main-nav.scss";
+@import "components/page-main.scss";
+@import "components/steps.scss";
